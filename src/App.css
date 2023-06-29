@@ -1,38 +1,153 @@
+/* Define the color palette */
+:root {
+  --primary-color: #FF5A5F;    /* Red */
+  --secondary-color: #FFA68F;  /* Orange */
+  --accent-color: #FFD2C5;     /* Light Orange */
+  --text-color: #FFFFFF;       /* White */
+}
+
+/* Set the background image and styling */
+body {
+  background-image: url('dance.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+}
+
+/* Styling for the App component */
 .App {
   text-align: center;
+  padding: 40px;
+  color: var(--text-color);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.title {
+  margin-bottom: 20px;
+  font-size: 48px;
+  font-weight: bold;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.soundboard {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.sound-button {
+  padding: 20px;
+  margin: 10px;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  font-size: 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.sound-button::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background-image: radial-gradient(circle, #ffffff 10%, transparent 20%);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  transform: scale(0);
+  opacity: 0;
+  transition: transform 0.5s, opacity 0.5s;
+}
+
+.sound-button:hover::after {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.stop-button {
+  padding: 20px;
+  margin: 10px;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  font-size: 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.add-sound-button {
+  padding: 20px;
+  margin: 10px;
+  background-color: var(--accent-color);
+  color: #FF5A5F;
+  font-size: 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.add-sound-button::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background-image: radial-gradient(circle, #ffffff 10%, transparent 20%);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  transform: scale(0);
+  opacity: 0;
+  transition: transform 0.5s, opacity 0.5s;
+}
+
+.add-sound-button:hover::after {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.recording-info {
+  margin-top: 20px;
+  font-size: 24px;
+}
+
+.save-container {
+  margin-top: 20px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.sound-name-input {
+  padding: 10px;
+  margin-right: 10px;
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.save-button {
+  padding: 10px;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
 }
+
+/* Styling for the audio player */
+.audio-player {
+  margin-top: 20px;
+}
+
