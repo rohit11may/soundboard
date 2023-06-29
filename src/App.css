@@ -1,14 +1,14 @@
 /* Define the color palette */
 :root {
-  --primary-color: #FF5A5F;    /* Red */
-  --secondary-color: #FFA68F;  /* Orange */
-  --accent-color: #FFD2C5;     /* Light Orange */
-  --text-color: #FFFFFF;       /* White */
+  --primary-color: #ff5a5f; /* Red */
+  --secondary-color: #ffa68f; /* Orange */
+  --accent-color: #ffd2c5; /* Light Orange */
+  --text-color: #ffffff; /* White */
 }
 
 /* Set the background image and styling */
 body {
-  background-image: url('dance.gif');
+  background-image: url("dance.gif");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -26,7 +26,7 @@ body {
 
 .title {
   /* font-family: 'Fredoka One', cursive; */
-  font-family: 'Amatic SC', cursive;
+  font-family: "Amatic SC", cursive;
   margin-bottom: 20px;
   font-size: 80px;
   font-weight: bold;
@@ -44,7 +44,7 @@ body {
   margin: 10px;
   background-color: var(--primary-color);
   color: var(--text-color);
-  font-family: 'Amatic SC', cursive;
+  font-family: "Amatic SC", cursive;
   font-size: 48px;
   border: none;
   border-radius: 8px;
@@ -53,24 +53,34 @@ body {
   overflow: hidden;
 }
 
-.sound-button::after {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
+.sound-button:hover {
+  transform: scale(1.1);
+  animation: jiggle 0.3s infinite linear;
   background: linear-gradient(
     to right,
-    rgba(255, 255, 255, 0.8) 10%,
-    rgba(255, 255, 255, 0.2) 50%,
-    rgba(255, 255, 255, 0.8) 90%
+    rgba(238, 130, 238, 0.8),
+    rgba(139, 0, 139, 0.8),
+    rgba(0, 0, 255, 0.8),
+    rgba(0, 255, 0, 0.8),
+    rgba(255, 255, 0, 0.8),
+    rgba(255, 165, 0, 0.8),
+    rgba(255, 0, 0, 0.8)
   );
-  background-size: 200% auto;
-  background-position: -100% center;
-  transform: scale(0);
-  opacity: 0;
-  transition: transform 0.5s, opacity 0.5s;
+}
+
+@keyframes jiggle {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 .sound-button:hover::after {
@@ -93,8 +103,8 @@ body {
   padding: 20px;
   margin: 10px;
   background-color: var(--accent-color);
-  font-family: 'Amatic SC', cursive;
-  color: #FF5A5F;
+  font-family: "Amatic SC", cursive;
+  color: #ff5a5f;
   font-size: 24px;
   border: none;
   border-radius: 8px;
@@ -122,7 +132,6 @@ body {
   opacity: 0;
   transition: transform 0.5s, opacity 0.5s;
 }
-
 
 .add-sound-button:hover::after {
   transform: scale(1);
@@ -155,7 +164,7 @@ body {
   padding: 10px;
   background-color: var(--secondary-color);
   color: var(--text-color);
-  font-family: 'Amatic SC', cursive;
+  font-family: "Amatic SC", cursive;
   font-size: 16px;
   border: none;
   border-radius: 8px;
@@ -166,4 +175,3 @@ body {
 .audio-player {
   margin-top: 20px;
 }
-
