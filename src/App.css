@@ -57,9 +57,14 @@ body {
   left: -50%;
   width: 200%;
   height: 200%;
-  background-image: radial-gradient(circle, #ffffff 10%, transparent 20%);
-  background-repeat: no-repeat;
-  background-position: 50%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.8) 10%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0.8) 90%
+  );
+  background-size: 200% auto;
+  background-position: -100% center;
   transform: scale(0);
   opacity: 0;
   transition: transform 0.5s, opacity 0.5s;
@@ -101,13 +106,19 @@ body {
   left: -50%;
   width: 200%;
   height: 200%;
-  background-image: radial-gradient(circle, #ffffff 10%, transparent 20%);
-  background-repeat: no-repeat;
-  background-position: 50%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.8) 10%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0.8) 90%
+  );
+  background-size: 200% auto;
+  background-position: -100% center;
   transform: scale(0);
   opacity: 0;
   transition: transform 0.5s, opacity 0.5s;
 }
+
 
 .add-sound-button:hover::after {
   transform: scale(1);

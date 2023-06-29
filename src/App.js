@@ -85,7 +85,7 @@ function App() {
   
   return (
     <div className="App">
-      <h1 className="title">Soundboard</h1>
+      <h1 className="title">{process.env.REACT_APP_TITLE}</h1>
       <div className="soundboard">
         {sounds.map((sound) => (
           <button
